@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 
 // reactstrap components
 import { Container } from "reactstrap";
@@ -15,7 +16,20 @@ import {
   Col
 } from "reactstrap";
 
+
 export default function PageHeader() {
+  const startBackend = (e) => {
+    let formData = new FormData();
+    axios
+      .post("https://mlyze-backend.herokuapp.com/analysePage",formData)
+      .then(res=>{
+          //console.log(res.data);
+      })
+      .catch(err=>{
+          //console.log(err);
+      });
+  }
+
   return (
     <div className="page-header header-filter">
       <div className="squares square1" />
@@ -47,6 +61,7 @@ export default function PageHeader() {
             className="btn-round"
             color="neutral"
             href="analyse"
+            onClick={(e)=>(startBackend(e))}
             style={{ marginTop: 30 }}
           >
             <i className="tim-icons icon-spaceship" /> Get started
