@@ -21,7 +21,7 @@ export default function PageHeader() {
   const startBackend = (e) => {
     let formData = new FormData();
     axios
-      .post("https://mlyze-backend.herokuapp.com/analysePage",formData)
+      .post("https://mlyze-backend.onrender.com/analysePage",formData)
       .then(res=>{
           //console.log(res.data);
       })
