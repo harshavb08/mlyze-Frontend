@@ -81,7 +81,7 @@ export default function Analyse() {
       
       formData.append("classifierList",JSON.stringify(classifierList));
       axios
-      .post("https://mlyze-backend.herokuapp.com/analysePage",formData)
+      .post("https://mlyze-backend.onrender.com/analysePage",formData)
       .then(res=>{
           //console.log(res.data);
           setResult(res.data);
